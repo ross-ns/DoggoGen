@@ -22,20 +22,20 @@ namespace DoggoGen
         {
             Random = new Random();
 
-            getName();
-            getGender();
-            getAge();
-            getHeight();
-            getLongth();
-            getType();
-            getSnoot();
-            getColour();
-            getAbility();
-            getToy();
-            getFren();
+            GetName();
+            GetGender();
+            GetAge();
+            GetHeight();
+            GetLongth();
+            GetType();
+            GetSnoot();
+            GetColour();
+            GetAbility();
+            GetToy();
+            GetFren();
         }
 
-        private void getName()
+        private void GetName()
         {
             string[] names = { "Cookie Monster", "Ewok", "Artoo Dogtoo", "Chewbacca", "Muttley Cru", "Moneypenny",
                             "Biggie Smalls", "50 Scent", "Snoop Dog", "Kanye Westie", "Groucho Barks", "Markie Mark",
@@ -61,7 +61,7 @@ namespace DoggoGen
             Name = names[Random.Next(0, names.Count())];
         }
 
-        private void getGender()
+        private void GetGender()
         {
             var gender = Random.Next(0, 2);
 
@@ -73,17 +73,17 @@ namespace DoggoGen
                 Gender = "Unknown";
         }
 
-        private void getHeight()
+        private void GetHeight()
         {
             Height = Random.Next(1, 100);
         }
 
-        private void getLongth()
+        private void GetLongth()
         {
             Longth = Random.Next(1, 100);
         }
 
-        private void getType()
+        private void GetType()
         {
             var size = Height * Longth;
 
@@ -103,24 +103,24 @@ namespace DoggoGen
                 Type = "Boofer";
         }
 
-        private void getSnoot()
+        private void GetSnoot()
         {
             Snoot = Random.NextDouble();
         }
 
-        private void getAge()
+        private void GetAge()
         {
             Age = Random.Next(0, 20);
         }
 
-        private void getColour()
+        private void GetColour()
         {
             string[] colours = { "White", "Black", "Black and white", "Brown", "Ginger", "Blue" };
 
             Colour = colours[Random.Next(0, colours.Count())];
         }
 
-        private void getAbility()
+        private void GetAbility()
         {
             string[] abilities = { "Adaptability", "Aerilate", "Aftermath", "Air Lock", "Analytic", "Anger Point", "Anticipation",
                                 "Arena Trap", "Aroma Veil", "Aura Break", "Bad Dreams", "Battery", "Battle Armor", "Battle Bond",
@@ -144,14 +144,14 @@ namespace DoggoGen
             Ability = abilities[Random.Next(0, abilities.Count())];
         }
 
-        private void getToy()
+        private void GetToy()
         {
             string[] toys = { "Tennis ball", "Frisbee", "Stick", "Ragger", "Nylabone", "Toilet roll tube", "Brick", "Football" };
 
             Toy = toys[Random.Next(0, toys.Count())];
         }
 
-        private void getFren()
+        private void GetFren()
         {
             string[] frens = { "Spot", "Socks", "Patch", "Blackie", "Brownie", "Coffee", "Cocoa", "Cinnamon", "Pepper", "Ginger","Bandit",
                                 "Red", "Fluffy", "Freckles", "Scruffy", "Goldie", "Rusty", "Tiny", "Lady", "King", "Prince", "Princess",
