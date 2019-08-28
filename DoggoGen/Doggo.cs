@@ -5,12 +5,12 @@ namespace DoggoGen
 {
     class Doggo : Animal
     {
-        public int Height;
-        public int Longth;
-        public string Type;
-        public double Snoot;
-        public string Colour;
-        public string Toy;
+        public int Height { get; protected set; }
+        public int Longth { get; protected set; }
+        public string Type { get; protected set; }
+        public double Snoot { get; protected set; }
+        public string Colour { get; protected set; }
+        public string Toy { get; protected set; }
 
         public Doggo()
         {
