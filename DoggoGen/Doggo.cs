@@ -3,34 +3,24 @@ using System.Linq;
 
 namespace DoggoGen
 {
-    public class GenerateDoggo
+    class Doggo : Animal
     {
-        private Random Random { get; set; }
-        public string Name { get; private set; }
-        public string Gender { get; private set; }
-        public int Age { get; private set; }
-        public int Height { get; private set; }
-        public int Longth { get; private set; }
-        public string Type { get; private set; }
-        public double Snoot { get; private set; }
-        public string Colour { get; private set; }
-        public string Ability { get; private set; }
-        public string Toy { get; private set; }
-        public string Fren { get; private set; }
+        public int Height;
+        public int Longth;
+        public string Type;
+        public double Snoot;
+        public string Colour;
+        public string Toy;
 
-        public GenerateDoggo()
+        public Doggo()
         {
-            Random = new Random();
-
             GetName();
-            GetGender();
             GetAge();
             GetHeight();
             GetLongth();
             GetType();
             GetSnoot();
             GetColour();
-            GetAbility();
             GetToy();
             GetFren();
         }
@@ -59,18 +49,6 @@ namespace DoggoGen
                             "Chauncey Von Poopsalot", "Howyadoin’ Mr. Beaujangles", "Alfredo Moonglow" };
 
             Name = names[Random.Next(0, names.Count())];
-        }
-
-        private void GetGender()
-        {
-            var gender = Random.Next(0, 2);
-
-            if (gender == 0)
-                Gender = "boye";
-            else if (gender == 1)
-                Gender = "girle";
-            else
-                Gender = "Unknown";
         }
 
         private void GetHeight()
@@ -120,29 +98,6 @@ namespace DoggoGen
             Colour = colours[Random.Next(0, colours.Count())];
         }
 
-        private void GetAbility()
-        {
-            string[] abilities = { "Adaptability", "Aerilate", "Aftermath", "Air Lock", "Analytic", "Anger Point", "Anticipation",
-                                "Arena Trap", "Aroma Veil", "Aura Break", "Bad Dreams", "Battery", "Battle Armor", "Battle Bond",
-                                "Beast Boost", "Berserk", "Big Pecks", "Blaze", "Bulletproof", "Cacophony", "Cheek Pouch", "Chlorophyll",
-                                "Clear Body", "Cloud Nine", "Color Change", "Comatose", "Competitive", "Compound Eyes", "Contrary",
-                                "Corrosion", "Cursed Body", "Cute Charm", "Damp", "Dancer", "Dark Aura", "Dazzling", "Defeatist",
-                                "Defiant", "Delta Stream", "Desolate Land", "Disguise", "Download", "Drizzle", "Drought", "Dry Skin",
-                                "Early Bird", "Effect Spore", "Electric Surge", "Emergency Exit", "Fairy Aura", "Filter", "Flame Body",
-                                "Flare Boost", "Flash Fire", "Flower Gift", "Flower Veil", "Fluffy", "Forecast", "Forewarn", "Friend Guard",
-                                "Frisk", "Full Metal Body", "Fur Coat", "Gale Wings", "Galvanize", "Gluttony", "Grass Pelt", "Grassy Surge",
-                                "Guts", "Harvest", "Healer", "Heatproof", "Heavy Metal", "Honey Gather", "Huge Power", "Hustle", "Hydration",
-                                "Hyper Cutter", "Ice Body", "Illuminate", "Illusion", "Immunity", "Imposter", "Infiltrator", "Innards Out",
-                                "Inner Focus", "Insomnia", "Intimidate", "Iron Barbs", "Iron Fist", "Justified", "Keen Eye", "Klutz",
-                                "Leaf Guard", "Levitate", "Light Metal", "Lightning Rod", "Limber", "Liquid Ooze", "Liquid Voice",
-                                "Long Reach", "Magic Bounce", "Magic Guard", "Magician", "Magma Armor", "Magnet Pull", "Marvel Scale",
-                                "Mega Launcher", "Merciless", "Minus", "Misty Surge", "Mold Breaker", "Moody", "Motor Drive", "Moxie",
-                                "Multiscale", "Multitype", "Mummy", "Natural Cure", "Neuroforce", "No Guard", "Normalize", "Oblivious",
-                                "Overcoat", "Overgrow", "Own Tempo", "Parental Bond", "Pickpocket", "Pickup", "Pixilate", "Plus", "Poison Heal",
-                                "Poison Point"};
-
-            Ability = abilities[Random.Next(0, abilities.Count())];
-        }
 
         private void GetToy()
         {
