@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DoggoGen
@@ -8,44 +9,71 @@ namespace DoggoGen
     {
         static void Main(string[] args)
         {
-
             Doggo doggo = new Doggo();
-            Console.WriteLine("DOGGO");
-            Console.WriteLine("Name: " + doggo.Name);
-            Console.WriteLine("Gender: " + doggo.Gender);
-            Console.WriteLine("Age: " + doggo.Age);
-            Console.WriteLine("Height: " + doggo.Height);
-            Console.WriteLine("Longth: " + doggo.Longth);
-            Console.WriteLine("Type: " + doggo.Type);
-            Console.WriteLine("Snoot span: " + doggo.Snoot);
-            Console.WriteLine("Colour: " + doggo.Colour);
-            Console.WriteLine("Favourite toy: " + doggo.Toy);
-            Console.WriteLine("Special ability: " + doggo.Ability);
-            Console.WriteLine("Best fren: " + doggo.Fren);
-
-            Console.WriteLine();
-
             Cat cat = new Cat();
-            Console.WriteLine("CAT");
-            Console.WriteLine("Name: " + cat.Name);
-            Console.WriteLine("Gender: " + cat.Gender);
-            Console.WriteLine("Age: " + cat.Age);
-            Console.WriteLine("Type: " + cat.Type);
-            Console.WriteLine("Lives left: " + cat.Lives);
-            Console.WriteLine("Intelligence: " + cat.Intelligence);
-            Console.WriteLine("Special ability: " + cat.Ability);
-            Console.WriteLine("Best fren: " + cat.Fren);
-
-            Console.WriteLine();
-
             Birb birb = new Birb();
-            Console.WriteLine("BIRB");
-            Console.WriteLine("Name: " + birb.Name);
-            Console.WriteLine("Gender: " + birb.Gender);
-            Console.WriteLine("Age: " + birb.Age);
-            Console.WriteLine("Favourite song: " + birb.Song);
-            Console.WriteLine("Favourite phrase/sound: " + birb.Phrase);
-            Console.WriteLine("Favourite food: " + birb.Food);
+
+            List<Animal> animals = new List<Animal>();
+            animals.Add(doggo);
+            animals.Add(cat);
+            animals.Add(birb);
+
+            foreach (Animal a in animals)
+            {
+                if (a is Doggo)
+                {
+                    Doggo d = a as Doggo;
+                    Console.WriteLine("Snoot span: " + d.Snoot);
+                }
+                else if (a is Cat)
+                {
+                    Cat c = a as Cat;
+                    Console.WriteLine("Lives left: "+ c.Lives);
+                }
+                else if (a is Birb)
+                {
+                    Birb b = a as Birb;
+                    Console.WriteLine("Favourite song: " + b.Song);
+                }
+                else
+                    Console.WriteLine("I don't know what the fuck 'a' is.");
+            }
+
+            //Console.WriteLine("DOGGO");
+            //Console.WriteLine("Name: " + doggo.Name);
+            //Console.WriteLine("Gender: " + doggo.Gender);
+            //Console.WriteLine("Age: " + doggo.Age);
+            //Console.WriteLine("Height: " + doggo.Height);
+            //Console.WriteLine("Longth: " + doggo.Longth);
+            //Console.WriteLine("Type: " + doggo.Type);
+            //Console.WriteLine("Snoot span: " + doggo.Snoot);
+            //Console.WriteLine("Colour: " + doggo.Colour);
+            //Console.WriteLine("Favourite toy: " + doggo.Toy);
+            //Console.WriteLine("Special ability: " + doggo.Ability);
+            //Console.WriteLine("Best fren: " + doggo.Fren);
+
+            //Console.WriteLine();
+
+            //Console.WriteLine("CAT");
+            //Console.WriteLine("Name: " + cat.Name);
+            //Console.WriteLine("Gender: " + cat.Gender);
+            //Console.WriteLine("Age: " + cat.Age);
+            //Console.WriteLine("Type: " + cat.Type);
+            //Console.WriteLine("Lives left: " + cat.Lives);
+            //Console.WriteLine("Intelligence: " + cat.Intelligence);
+            //Console.WriteLine("Special ability: " + cat.Ability);
+            //Console.WriteLine("Best fren: " + cat.Fren);
+
+            //Console.WriteLine();
+
+            //Birb birb = new Birb();
+            //Console.WriteLine("BIRB");
+            //Console.WriteLine("Name: " + birb.Name);
+            //Console.WriteLine("Gender: " + birb.Gender);
+            //Console.WriteLine("Age: " + birb.Age);
+            //Console.WriteLine("Favourite song: " + birb.Song);
+            //Console.WriteLine("Favourite phrase/sound: " + birb.Phrase);
+            //Console.WriteLine("Favourite food: " + birb.Food);
 
             //Doggo[] doggos = new Doggo[1000];
             //Random random = new Random();

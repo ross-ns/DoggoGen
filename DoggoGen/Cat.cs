@@ -27,6 +27,7 @@ namespace DoggoGen
             // Name is derived from the Animal class
             string[] names = { "Tom", "Ginger", "Simba", "Felix", "Tigger", "Gardfiel", "Charlie", "Mr. Bigglesworth", "Mufasa",
                             "Azrael", "Salem" };
+
             Name = names[Random.Next(0, names.Count())];
         }
 
