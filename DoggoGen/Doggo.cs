@@ -51,6 +51,16 @@ namespace DoggoGen
             Name = names[Random.Next(0, names.Count())];
         }
 
+        public override void GetGender()
+        {
+            var gender = Random.Next(0, 2);
+
+            if (gender == 0)
+                Gender = "Boye";
+            else if (gender == 1)
+                Gender = "Girle";
+        }
+
         private void GetHeight()
         {
             Height = Random.Next(1, 100);

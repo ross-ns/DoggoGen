@@ -23,18 +23,36 @@ namespace DoggoGen
                 if (a is Doggo)
                 {
                     Doggo d = a as Doggo;
+                    Console.WriteLine("DOGGO");
+                    Console.WriteLine("Name: " + d.Name);
+                    Console.WriteLine("Age: " + d.Age);
+                    Console.WriteLine("Gender: " + d.Gender);
                     Console.WriteLine("Snoot span: " + d.Snoot);
+
+                    Console.WriteLine();
                 }
+
                 else if (a is Cat)
                 {
                     Cat c = a as Cat;
+                    Console.WriteLine("CAT");
+                    Console.WriteLine("Name: " + c.Name);
+                    Console.WriteLine("Age: " + c.Age);
+                    Console.WriteLine("Gender: " + c.Gender);
                     Console.WriteLine("Lives left: "+ c.Lives);
+
+                    Console.WriteLine();
                 }
+
                 else if (a is Birb)
                 {
                     Birb b = a as Birb;
+                    Console.WriteLine("BIRB");
                     Console.WriteLine("Favourite song: " + b.Song);
+
+                    Console.WriteLine();
                 }
+
                 else
                     Console.WriteLine("I don't know what the fuck 'a' is.");
             }

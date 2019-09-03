@@ -21,7 +21,7 @@ namespace DoggoGen
             GetAbility();
         }
 
-        private void GetGender()
+        public virtual void GetGender()
         {
             var gender = Random.Next(0, 2);
 
