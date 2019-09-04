@@ -6,14 +6,38 @@ using System.Threading.Tasks;
 
 namespace DoggoGen
 {
-    class Animal
+    public abstract class Animal
     {
         internal Random Random = new Random();
+
         public string Name { get; protected set; }
         public int Age { get; protected set; }
+
         public string Gender { get; protected set; }
+        public string Gender
+        {
+            get
+            {
+                return GetGender();
+            }
+        }
+        public string Gender => GetGender();
+
         public string Fren { get; protected set; }
-        public string Ability { get; protected set; }
+        public string Ability
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(ability))
+                {
+                    ability = GetAbility();
+                }
+                    return ability;
+            }
+        }
+
+        protected string ability;
+
 
         public Animal()
         {
@@ -21,17 +45,17 @@ namespace DoggoGen
             GetAbility();
         }
 
-        public virtual void GetGender()
+        public virtual string GetGender()
         {
             var gender = Random.Next(0, 2);
 
             if (gender == 0)
-                Gender = "Boy";
-            else if (gender == 1)
-                Gender = "Girl";
+                return "Boy";
+
+            return "Girl";
         }
 
-        private void GetAbility()
+        private string GetAbility()
         {
             string[] abilities = { "Adaptability", "Aerilate", "Aftermath", "Air Lock", "Analytic", "Anger Point", "Anticipation",
                                 "Arena Trap", "Aroma Veil", "Aura Break", "Bad Dreams", "Battery", "Battle Armor", "Battle Bond",
@@ -52,7 +76,7 @@ namespace DoggoGen
                                 "Overcoat", "Overgrow", "Own Tempo", "Parental Bond", "Pickpocket", "Pickup", "Pixilate", "Plus", "Poison Heal",
                                 "Poison Point"};
 
-            Ability = abilities[Random.Next(0, abilities.Count())];
+            return abilities[Random.Next(0, abilities.Count())];
         }
     }
 }
